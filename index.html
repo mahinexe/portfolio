@@ -1,291 +1,533 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="x-icon" href="./img/faviocon.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style media="screen">
-      *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: #fcfcfc;
-    font-family: sans-serif;
-}
-footer{
-    margin-top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #111;
-    height: auto;
-    width: 100vw;
 
-    padding-top: 40px;
-    color: #fff;
-}
-.footer-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    width:100vw;
-}
-.footer-content h3{
-    font-size: 2.1rem;
-    font-weight: 500;
-    text-transform: capitalize;
-    line-height: 3rem;
-}
-.footer-content p{
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 28px;
-    font-size: 14px;
-    color: #cacdd2;
-}
-.socials{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-}
-.socials li{
-    margin: 0 10px;
-}
-.socials a{
-    text-decoration: none;
-    color: #fff;
-    border: 1.1px solid white;
-    padding: 5px;
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" type="x-icon" href="./img/faviocon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammodullah Al Mahin</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    border-radius: 50%;
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-}
-.socials a i{
-    font-size: 1.1rem;
-    width: 20px;
+  <style>
+    /* Your existing inline styles unchanged */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #fcfcfc;
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+    }
 
-    transition: color .4s ease;
+    footer {
+      margin-top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #111;
+      height: auto;
+      width: 100vw;
+      padding-top: 40px;
+      color: #fff;
+    }
 
-}
-.socials a:hover i{
-    color: aqua;
-}
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      width: 100vw;
+    }
 
-.footer-bottom{
-    background: #000;
-    width: 100vw;
-    padding: 20px;
-padding-bottom: 40px;
-    text-align: center;
-}
-.footer-bottom p{
-float: left;
-    font-size: 14px;
-    word-spacing: 2px;
-    text-transform: capitalize;
-}
-.footer-bottom p a{
-  color:#44bae8;
-  font-size: 16px;
-  text-decoration: none;
-}
-.footer-bottom span{
-    text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
-}
-.footer-menu{
-  float: right;
+    .footer-content h3 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      line-height: 3rem;
+    }
 
-}
-.footer-menu ul{
-  display: flex;
-}
-.footer-menu ul li{
-padding-right: 10px;
-display: block;
-}
-.footer-menu ul li a{
-  color: #cfd2d6;
-  text-decoration: none;
-}
-.footer-menu ul li a:hover{
-  color: #27bcda;
-}
+    .footer-content p {
+      max-width: 500px;
+      margin: 10px auto;
+      line-height: 28px;
+      font-size: 14px;
+      color: #cacdd2;
+    }
 
-@media (max-width:500px) {
-.footer-menu ul{
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-}
-    </style>
+    .socials {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0 3rem 0;
+    }
+
+    .socials li {
+      margin: 0 10px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: #fff;
+      border: 1.1px solid white;
+      padding: 5px;
+      border-radius: 50%;
+    }
+
+    .socials a i {
+      font-size: 1.1rem;
+      width: 20px;
+      transition: color .4s ease;
+    }
+
+    .socials a:hover i {
+      color: aqua;
+    }
+
+    .footer-bottom {
+      background: #000;
+      width: 100vw;
+      padding: 20px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      float: left;
+      font-size: 14px;
+      word-spacing: 2px;
+      text-transform: capitalize;
+    }
+
+    .footer-bottom p a {
+      color: #44bae8;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .footer-bottom span {
+      text-transform: uppercase;
+      opacity: .4;
+      font-weight: 200;
+    }
+
+    .footer-menu {
+      float: right;
+    }
+
+    .footer-menu ul {
+      display: flex;
+    }
+
+    .footer-menu ul li {
+      padding-right: 10px;
+      display: block;
+    }
+
+    .footer-menu ul li a {
+      color: #cfd2d6;
+      text-decoration: none;
+    }
+
+    .footer-menu ul li a:hover {
+      color: #27bcda;
+    }
+
+    @media (max-width:500px) {
+      .footer-menu ul {
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Project section styles (new) */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    @media(min-width:640px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media(min-width:1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: .75rem;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / .08), 0 4px 6px -4px rgb(0 0 0 / .06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .08);
+    }
+
+    .project-thumb {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .project-body {
+      padding: 1rem;
+    }
+
+    .project-title {
+      font-weight: 800;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      color: #1f2937;
+      margin-bottom: .35rem;
+    }
+
+    .project-desc {
+      color: #6b7280;
+      font-size: .95rem;
+      margin-bottom: .75rem;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: .75rem;
+    }
+
+    .badge {
+      font-size: .75rem;
+      background: #eef2ff;
+      color: #4338ca;
+      border: 1px solid #c7d2fe;
+      padding: .2rem .5rem;
+      border-radius: 9999px;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: .5rem;
+      margin-top: .35rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      white-space: nowrap;
+      font-weight: 700;
+      font-size: .9rem;
+      padding: .5rem .7rem;
+      border-radius: .5rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+    }
+
+    .btn-outline {
+      border: 1px solid #4f46e5;
+      color: #4f46e5;
+      background: #fff;
+    }
+
+    .btn i {
+      font-size: .95rem;
+    }
+
+    /* Dark mode support if your page toggles .dark on html or body */
+    .dark .project-card {
+      background: #0f172a;
+      border-color: #1f2937;
+    }
+
+    .dark .project-title {
+      color: #e5e7eb;
+    }
+
+    .dark .project-desc {
+      color: #9ca3af;
+    }
+
+    .dark .badge {
+      background: #1e293b;
+      color: #c7d2fe;
+      border-color: #334155;
+    }
+
+    .dark .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+    }
+
+    .dark .btn-outline {
+      border-color: #818cf8;
+      color: #c7d2fe;
+      background: transparent;
+    }
+  </style>
 </head>
-    <title>Mohammodullah Al Mahin</title>
-  </head>
-  <body class="font-nunito">
-    <!-- into section -->
+
+<body class="font-mono">
+  <!-- hero / intro -->
+  <div
+    class="h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden">
+    <!-- navbar -->
+    <nav class="w-full fixed top-0 bg-white z-10 dark:bg-slate-900">
+      <div class="container mx-auto py-5 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img class="w-8" src="./img/logo.png" alt="" />
+          <span class="text-2xl font-bold text-indigo-900 dark:text-white">Mohammodullah Al Mahin</span>
+        </div>
+        <ul class="hidden md:flex space-x-10 text-gray-600 dark:text-gray-100 font-bold text-sm uppercase">
+          <li class="hover:text-gray-500"><a href="#">homepage</a></li>
+          <li class="hover:text-gray-500"><a href="#about">about me</a></li>
+          <li class="hover:text-gray-500"><a href="#projects">projects</a></li>
+          <li class="hover:text-gray-500"><a href="#contact">contact</a></li>
+        </ul>
+        <img id="moon" src="./img/moon.png" class="hidden md:block w-5 cursor-pointer" alt="" />
+        <div id="hamburger" class="space-y-1 md:hidden cursor-pointer z-20">
+          <div class="w-6 h-0.5 bg-black"></div>
+          <div class="w-6 h-0.5 bg-black"></div>
+          <div class="w-6 h-0.5 bg-black"></div>
+        </div>
+        <ul id="menu"
+          class="hidden bg-indigo-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center">
+          <li><a id="hLink" href="#">Homepage</a></li>
+          <li><a id="hLink" href="#about">About me</a></li>
+          <li><a id="hLink" href="#projects">Projects</a></li>
+          <li><a id="hLink" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <img class="absolute bottom-0 right-0 lg:left-0 mx-auto h-5/6 object-cover" src="./img/man.png" alt="" />
     <div
-      class="h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden"
-    >
-      <!-- navbar -->
-      <nav class="w-full fixed top-0 bg-white z-10 dark:bg-slate-900">
-        <div class="container mx-auto py-5 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <img class="w-8" src="./img/logo.png" alt="" />
-            <span class="text-2xl font-bold text-indigo-900 dark:text-white"
-              >Mohammodullah Al Mahin</span
-            >
-          </div>
-          <ul
-            class="hidden md:flex space-x-10 text-gray-600 dark:text-gray-100 font-bold text-sm uppercase"
-          >
-            <li class="hover:text-gray-500">
-              <a href="#">homepage</a>
-            </li>
-            <li class="hover:text-gray-500">
-              <a href="#about">about me</a>
-            </li>
-            <li class="hover:text-gray-500">
-              <a href="#contact">contact</a>
-            </li>
-          </ul>
-          <img
-            id="moon"
-            src="./img/moon.png"
-            class="hidden md:block w-5 cursor-pointer"
-            alt=""
-          />
-          <div id="hamburger" class="space-y-1 md:hidden cursor-pointer z-20">
-            <div class="w-6 h-0.5 bg-black"></div>
-            <div class="w-6 h-0.5 bg-black"></div>
-            <div class="w-6 h-0.5 bg-black"></div>
-          </div>
-          <ul
-            id="menu"
-            class="hidden bg-indigo-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center"
-          >
-            <li>
-              <a id="hLink" href="#">Homepage</a>
-            </li>
-            <li>
-              <a id="hLink" href="#about">About me</a>
-            </li>
-            <li>
-              <a id="hLink" href="#contact">Contact</a>
-            </li>
-          </ul>
+      class="hidden lg:block absolute -bottom-1/4 right-0 left-0 mx-auto w-big h-big bg-indigo-900 rounded-full -z-10">
+    </div>
+
+    <div
+      class="absolute top-1/3 left-5 text-xl sm:left-10 sm:text-4xl md:left-1/4 md:text-6xl lg:left-5 xl:left-48 xl:text-7xl font-bold">
+      <span class="text-gray-600">𝐓𝐞𝐜𝐡</span>
+      <p id="text" class="text-red-500"></p>
+    </div>
+
+    <div
+      class="hidden lg:flex flex-col gap-5 rounded-md shadow-lg absolute top-0 bottom-0 m-auto right-10 bg-white dark:bg-slate-900 dark:shadow-slate-800 p-6 h-fit w-1/3">
+      <h1 class="text-4xl font-bold text-indigo-900">Hi, I'm Mahin</h1>
+      <p class="text-gray-400" style="
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               'Liberation Mono', 'Courier New', monospace;
+  font-size: 1.25rem; line-height: 1.8; letter-spacing: 0.2px;">
+        I’m a Computer Science and Engineering student focused on technology, cybersecurity, innovation, and creating
+        impactful solutions.
+      </p>
+
+      <a class="bg-indigo-600 text-white text-xl px-3 py-2 rounded-md font-semibold w-fit" href="#contact">Contact
+        Me</a>
+    </div>
+  </div>
+
+  <!-- about -->
+  <div id="about" class="px-10 dark:bg-slate-900">
+    <div class="container mx-auto py-40 flex flex-col-reverse lg:flex-row items-center gap-20">
+      <div class="relative">
+        <img class="h-1/4 absolute top-0 left-0 -z-10" src="./img/dots.png" alt="" />
+        <div class="h-full rounded-full overflow-hidden">
+          <img src="./img/portrait.jpg" alt="" />
         </div>
-      </nav>
-     
-      <img
-        class="absolute bottom-0 right-0 lg:left-0 mx-auto h-5/6 object-cover"
-        src="./img/man.png"
-        alt=""
-      />
-      
-      <div
-        class="hidden lg:block absolute -bottom-1/4 right-0 left-0 mx-auto w-big h-big bg-indigo-900 rounded-full -z-10"
-      ></div>
-      
-      <div
-        class="absolute top-1/3 left-5 text-xl sm:left-10 sm:text-4xl md:left-1/4 md:text-6xl lg:left-5 xl:left-48 xl:text-7xl font-bold"
-      >
-        <span class="text-gray-600">𝐓𝐞𝐜𝐡</span>
-        <p id="text" class="text-red-500"> </p>
       </div>
-      <!-- texts -->
-      <div
-        class="hidden lg:flex flex-col gap-5 rounded-md shadow-lg absolute top-0 bottom-0 m-auto right-10 bg-white dark:bg-slate-900 dark:shadow-slate-800 p-6 h-fit w-1/3"
-      >
-        <h1 class="text-4xl font-bold text-indigo-900">Hi, I'm Mahin</h1>
-        <p class="text-gray-400">
-          I’m a Computer Science and Engineering student focused on technology, cybersecurity, innovation, and creating impactful solutions.
-          
+      <div class="my-auto flex flex-col gap-3">
+        <h1 class="text-indigo-600 font-bold" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+           font-size: 2.25rem; line-height: 1.2; letter-spacing: 0.3px;">
+          ABOUT ME
+        </h1>
+
+        <h1 class="text-3xl font-medium dark:text-white font-mono">
+          Tech Enthusiast
+        </h1>
+
+        <p class="text-gray-400" style="
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 1.25rem; line-height: 1.8; letter-spacing: 0.2px;">
+          I’m Mohammodullah Al Mahin, a CSE student at Southeast University, an aspiring ethical hacker, and a
+          cybersecurity enthusiast.I serve as the Team Lead of IT & Infrastructure at Southeast Computer Club. I’m
+          always learning, improving, and creating solutions that make a real impact. I'm dedicated to applying my
+          skills in real-world projects and continuously learning in the field of computer science.
         </p>
-        <a
-          class="bg-indigo-600 text-white text-xl px-3 py-2 rounded-md font-semibold w-fit"
-          href="#contact"
-          >Contact Me</a
-        >
+
       </div>
     </div>
-    <!-- about -->
-    <div id="about" class="px-10 dark:bg-slate-900">
-      <div
-        class="container mx-auto py-40 flex flex-col-reverse lg:flex-row items-center gap-20"
-      >
-        
-        <div class="relative">
-          <img
-            class="h-1/4 absolute top-0 left-0 -z-10"
-            src="./img/dots.png"
-            alt=""
-          />
-          <div class="h-full rounded-full overflow-hidden">
-            <img src="./img/portrait.jpg" alt="" />
+  </div>
+
+  <!-- projects -->
+  <section id="projects" class="px-10 dark:bg-slate-900 font-mono">
+    <div class="container mx-auto py-40">
+      <div class="flex items-center justify-between md:my-10">
+        <h2 class="section-title text-indigo-900 dark:text-white">Projects</h2>
+        <a href="https://github.com/mahinexe" target="_blank" class="btn btn-outline">
+          <i class="fa fa-github"></i> View All
+        </a>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <img class="project-thumb" src="./img/project1.png" alt="Scholarship Allocation System">
+          <div class="project-body">
+            <h3 class="project-title">Scholarship Allocation System</h3>
+            <p class="project-desc">Greedy and 0/1 Knapsack-based allocation to balance merit and financial need;
+              compares strategies and outputs awarded sets.</p>
+            <div class="badge-row">
+              <span class="badge">C++</span>
+              <span class="badge">Greedy</span>
+              <span class="badge">DP/Knapsack
+              </span>
+              <span class="badge">Algorithm</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/mahinexe/scholarship_allocation_system_project"
+                target="_blank"><i class="fa fa-code"></i> Code</a>
+
+            </div>
           </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <img class="project-thumb" src="./img/project2.png" alt="Portfolio v2 project cover">
+          <div class="project-body">
+            <h3 class="project-title">University Course Registration System</h3>
+            <p class="project-desc">Console app with add/remove, search, conflict detection, credit limits, and
+              undo/redo using linked lists and stacks.</p>
+            <div class="badge-row">
+              <span class="badge">C</span>
+              <span class="badge">Linked List
+              </span>
+              <span class="badge">Stacks</span>
+              <span class="badge">Data Structure</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary"
+                href="https://github.com/mahinexe/university-course-registration-system_project" target="_blank"><i
+                  class="fa fa-code"></i> Code</a>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <img class="project-thumb" src="./img/project3.png" alt="Task Automator project cover">
+          <div class="project-body">
+            <h3 class="project-title">JARVIS Assistant</h3>
+            <p class="project-desc">Personal assistant inspired by JARVIS; voice commands, automation, and integrations.
+            </p>
+            <div class="badge-row">
+              <span class="badge">Python</span>
+              <span class="badge">Assistant</span>
+              <span class="badge">Automation</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://github.com/mahinexe/task-automator" target="_blank"><i
+                  class="fa fa-code"></i> Code</a>
+
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Optional: Call-to-action -->
+      <div class="p-10 mt-5 bg-gray-200 dark:bg-slate-800 rounded-lg">
+        <h3 class="text-xl font-bold text-indigo-900 dark:text-white my-3">Want to collaborate?</h3>
+        <p class="text-gray-600 dark:text-gray-100">Open to cybersecurity and student tech initiatives.
+          Reach out via LinkedIn or GitHub.</p>
+        <div class="card-actions" style="margin-top:.75rem;">
+          <a class="btn btn-primary" href="https://github.com/mahinexe" target="_blank">
+            <i class="fa fa-github"></i> GitHub
+          </a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/mahinexe334" target="_blank">
+            <i class="fa fa-linkedin"></i> LinkedIn
+          </a>
         </div>
-       
-        <div class="my-auto flex flex-col gap-3">
-          <h1 class="text-indigo-600 font-bold">ABOUT ME</h1>
-          <h1 class="text-3xl font-medium dark:text-white">𝐓𝐞𝐜𝐡 𝐄𝐧𝐭𝐡𝐮𝐬𝐢𝐚𝐬𝐭</h1>
-          <h1 class="text-3xl font-medium dark:text-white">
-          </h1>
-          <p class="text-gray-400">
-          I am a Computer Science and Engineering student at Southeast University and the Assistant Head of the IT Team at Southeast Computer Club. With a passion for technology and cybersecurity, I'm dedicated to applying their skills in real-world projects and continuously learning in the field of computer science. 
-          </p>
-          </div>
-          </div>
-        </div>
+
       </div>
     </div>
-     
-    <div id="contact" class="dark:bg-slate-900">
-      <div class="container mx-auto">
-      </div>
+  </section>
+
+  <!-- contact anchor container -->
+  <div id="contact" class="dark:bg-slate-900">
+    <div class="container mx-auto"></div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="footer-content">
+      <h3 style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                        'Liberation Mono', 'Courier New', monospace; letter-spacing: .3px;">
+        &lt;Contact Me/&gt;
+      </h3>
+      <p style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                       'Liberation Mono', 'Courier New', monospace; letter-spacing: .2px;">
+        You can follow me on various social media platforms.
+      </p>
+
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/myself.mahin" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/myselfmahin" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/mahin.exe" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://www.snapchat.com/add/being_lame" target="_blank"><i class="fa fa-snapchat-ghost"></i></a>
+        </li>
+        <li><a href="mailto:almahincoc2@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        <li><a href="https://github.com/mahinexe" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/mahinexe334" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
     </div>
-    
-    <footer>
-      <div class="footer-content">
-          <h3>< 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐌𝐞 /></h3>
-          <p>You can follow me on varies social media platfrom.</p>
-          <ul class="socials">
-              <li><a href="https://www.facebook.com/myself.mahin" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://twitter.com/myselfmahin" target="_blank"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="https://www.instagram.com/mahin.exe" target="_blank"><i class="fa fa-instagram"></i></a></li>
-              <li><a href="https://www.snapchat.com/add/being_lame" target="_blank"><i class="fa fa-snapchat-ghost"></i></a></li>
-              <li><a href="mailto:almahincoc2@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/mahinexe334" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-      </div>
-      <div class="footer-bottom">
-          <c>© 2025  All Right Reserved By <br><c></c><a href="https://www.facebook.com/myself.mahin" target="_blank"> <font color="Blue">Mohammodullah Al Mahin</font></a></br></c></span
-          >
-                  <div class="footer-menu">
-                  </div>
-      </div>
+    <div class="footer-bottom">
+      <c>© 2025 All Right Reserved By <br>
+        <c></c><a href="https://www.facebook.com/myself.mahin" target="_blank">
+          <font color="Blue">Mohammodullah Al Mahin</font>
+        </a></br>
+      </c>
+      <div class="footer-menu"></div>
+    </div>
   </footer>
-      </div>
-    </div>
-    <script src="./app.js"></script>
-    <script src="./autotyping.js"></script> 
-  </body>
+
+  <!-- scripts -->
+  <script src="./app.js"></script>
+  <script src="./autotyping.js"></script>
+</body>
+
 </html>
