@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Mohammodullah Al Mahin - CSE student, cybersecurity enthusiast, and builder." />
+  <link rel="shortcut icon" type="image/x-icon" href="./img/faviocon.png" />
+  <title>Mohammodullah Al Mahin | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="floating-code" aria-hidden="true">
+    <span>{code}</span>
+    <span>{eat}</span>
+    <span>{sleep}</span>
+    <span>{build}</span>
+    <span>{secure}</span>
+    <span>{repeat}</span>
+  </div>
+
+  <header class="site-header">
+    <a href="#home" class="brand">
+      <img src="./img/logo.png" alt="Mahin logo" />
+      <span>mahin.exe</span>
+    </a>
+    <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero section">
+      <div class="hero-head reveal">
+        <p class="hero-command"><span class="prompt">$</span> <span class="cmd">whoami</span></p>
+        <h1 class="hero-name">Mohammodullah Al <span>Mahin</span></h1>
+        <p class="hero-tagline">
+          <span class="tag-static">Tech</span>
+          <span class="tag-sep">_</span>
+          <span id="typed-role" class="typed-role"></span><span class="cursor">|</span>
+        </p>
+      </div>
+
+      <div class="hero-visual reveal">
+        <figure class="intro-frame reveal">
+          <img src="./img/man.png" alt="Intro illustration of Mahin" />
+          
+        </figure>
+      </div>
+
+      <div class="hero-code reveal">
+        <div class="terminal-card">
+          <div class="terminal-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>intro.ts</p>
+          </div>
+          <div class="terminal-body">
+            <pre><code><span class="ts-keyword">const</span> <span class="ts-variable">developer</span> <span class="ts-operator">=</span> <span class="ts-punc">{</span>
+  <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Developer"</span><span class="ts-punc">,</span>
+  <span class="ts-prop">focus</span><span class="ts-punc">:</span> <span class="ts-string">"Machine Learning"</span><span class="ts-punc">,</span>
+  <span class="ts-prop">passion</span><span class="ts-punc">:</span> <span class="ts-string">"Cybersecurity &amp; Ethical Hacking"</span>
+<span class="ts-punc">}</span><span class="ts-punc">;</span></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <section id="about" class="section split-section">
+      <div class="profile-card reveal">
+        <img src="./img/portrait.jpg" alt="Portrait of Mohammodullah Al Mahin" />
+      </div>
+      <div class="code-card reveal">
+        <div class="terminal-card">
+          <div class="terminal-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>about.ts</p>
+          </div>
+          <div class="terminal-body">
+            <pre><code><span class="ts-keyword">const</span> <span class="ts-variable">developer</span> <span class="ts-operator">=</span> <span class="ts-punc">{</span>
+  <span class="ts-prop">name</span><span class="ts-punc">:</span> <span class="ts-string">"Mohammodullah Al Mahin"</span><span class="ts-punc">,</span>
+  <span class="ts-prop">university</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast University"</span><span class="ts-punc">,</span>
+  <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Team Lead, IT &amp; Infrastructure"</span><span class="ts-punc">,</span>
+  <span class="ts-prop">interests</span><span class="ts-punc">:</span> <span class="ts-punc">[</span><span class="ts-string">"Cybersecurity"</span><span class="ts-punc">,</span> <span class="ts-string">"Automation"</span><span class="ts-punc">,</span> <span class="ts-string">"System Design"</span><span class="ts-punc">]</span><span class="ts-punc">,</span>
+  <span class="ts-prop">mindset</span><span class="ts-punc">:</span> <span class="ts-string">"Learn fast. Build deeply. Ship reliably."</span>
+<span class="ts-punc">}</span><span class="ts-punc">;</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">CORE STACK</p>
+        <h2>Technologies | Work With | Languages</h2>
+      </div>
+      <div class="chip-grid reveal">
+        <span>C</span>
+        <span>C++</span>
+        <span>Python</span>
+        <span>Data Structures</span>
+        <span>Algorithms</span>
+        <span>Git</span>
+        <span>Linux</span>
+        <span>Cybersecurity Fundamentals</span>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2>Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project reveal">
+          <img src="./img/project1.png" alt="Scholarship Allocation System" />
+          <div class="project-content">
+            <h3>Scholarship Allocation System</h3>
+            <p>Greedy and 0/1 Knapsack allocation logic to balance merit and financial need.</p>
+            <p class="project-stack">C++ | Greedy | Dynamic Programming</p>
+            <a href="https://github.com/mahinexe/scholarship_allocation_system_project" target="_blank" rel="noopener noreferrer">Open Repository</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <img src="./img/project2.png" alt="University Course Registration System" />
+          <div class="project-content">
+            <h3>University Course Registration System</h3>
+            <p>Console-based registration workflow with undo/redo, conflict detection, and credit rules.</p>
+            <p class="project-stack">C | Linked List | Stack</p>
+            <a href="https://github.com/mahinexe/university-course-registration-system_project" target="_blank" rel="noopener noreferrer">Open Repository</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <img src="./img/project3.png" alt="JARVIS Assistant" />
+          <div class="project-content">
+            <h3>JARVIS Assistant</h3>
+            <p>Voice-oriented assistant with practical automation routines and command integrations.</p>
+            <p class="project-stack">Python | Automation | AI Assistant</p>
+            <a href="https://github.com/mahinexe/JARVIS" target="_blank" rel="noopener noreferrer">Open Repository</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">EDUCATION</p>
+        <h2>Academic Journey</h2>
+      </div>
+      <div class="education-grid reveal">
+        <article class="edu-card">
+          <div class="edu-top">
+            <p class="edu-year">B.Sc. (2022-Present)</p>
+            <span class="edu-badge is-current">Ongoing</span>
+          </div>
+          <h3>Bachelor of Science  in Computer Science and Engineering</h3>
+          <p class="edu-school">Southeast University, Bangladesh</p>
+          <ul>
+            <li>Batch 65</li>
+            
+        </article>
+        <article class="edu-card">
+          <div class="edu-top">
+            <p class="edu-year">HSC(2022)</p>
+            <span class="edu-badge">GPA 5.00</span>
+          </div>
+          <h3>Higher Secondary Certificate</h3>
+          <p class="edu-school">Dhaka Commerce College</p>
+          <ul>
+            <li>Science</li>
+            <li>Board: Dhaka</li>
+          </ul>
+        </article>
+        <article class="edu-card">
+          <div class="edu-top">
+            <p class="edu-year">SSC(2020)</p>
+            <span class="edu-badge">GPA 5.00</span>
+          </div>
+          <h3>Secondary School Certificate</h3>
+          <p class="edu-school">Monipur High School</p>
+          <ul>
+            <li>Science</li>
+            <li>Board: Dhaka</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">CONTACT</p>
+        <h2>Let's Connect</h2>
+      </div>
+      <div class="contact-terminal reveal">
+        <div class="terminal-card">
+          <div class="terminal-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>contact.sh</p>
+          </div>
+          <div class="terminal-body">
+            <p class="contact-intro"><span id="contact-typed"></span><span class="contact-cursor">|</span></p>
+            <div class="contact-links">
+              <a href="mailto:almahincoc2@gmail.com" aria-label="Email" title="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6.75A2.75 2.75 0 0 1 4.75 4h14.5A2.75 2.75 0 0 1 22 6.75v10.5A2.75 2.75 0 0 1 19.25 20H4.75A2.75 2.75 0 0 1 2 17.25V6.75Zm2.42-.25L12 11.85l7.58-5.35H4.42Zm15.08 1.84-6.9 4.87a1 1 0 0 1-1.2 0L4.5 8.34v8.91c0 .69.56 1.25 1.25 1.25h12.5c.69 0 1.25-.56 1.25-1.25V8.34Z"/></svg>
+                <span class="sr-only">Email</span>
+              </a>
+              <a href="https://github.com/mahinexe" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.69-.22.69-.48v-1.89c-2.8.61-3.39-1.19-3.39-1.19-.46-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.02 1.53 1.02.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.35-2.23-.25-4.57-1.12-4.57-4.97 0-1.1.39-2 1.02-2.71-.1-.25-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.03A9.6 9.6 0 0 1 12 6.85c.85 0 1.71.11 2.52.33 1.91-1.3 2.75-1.03 2.75-1.03.55 1.39.2 2.42.1 2.67.63.71 1.02 1.61 1.02 2.71 0 3.86-2.34 4.71-4.58 4.97.36.31.68.92.68 1.86v2.76c0 .27.18.59.69.48A10 10 0 0 0 12 2Z"/></svg>
+                <span class="sr-only">GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/mahinexe334" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM5.5 10h2.88v8.5H5.5V10Zm4.57 0h2.76v1.16h.04c.38-.72 1.32-1.48 2.72-1.48 2.9 0 3.43 1.91 3.43 4.39v4.43h-2.88v-3.93c0-.94-.02-2.15-1.31-2.15-1.31 0-1.51 1.02-1.51 2.08v4h-2.88V10Z"/></svg>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+              <a href="https://www.facebook.com/myself.mahin" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.2c0-.87.24-1.46 1.5-1.46h1.6V5.1c-.28-.04-1.23-.1-2.33-.1-2.31 0-3.89 1.41-3.89 4v2H8v3h2.38v8h3.12Z"/></svg>
+                <span class="sr-only">Facebook</span>
+              </a>
+              <a href="https://www.instagram.com/mahin.exe" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.5A2.5 2.5 0 0 0 4.5 7v10A2.5 2.5 0 0 0 7 19.5h10a2.5 2.5 0 0 0 2.5-2.5V7A2.5 2.5 0 0 0 17 4.5H7Zm5 2.75A4.75 4.75 0 1 1 7.25 12 4.75 4.75 0 0 1 12 7.25Zm0 2.5A2.25 2.25 0 1 0 14.25 12 2.25 2.25 0 0 0 12 9.75Zm5.12-3.06a1.13 1.13 0 1 1-1.13 1.13 1.13 1.13 0 0 1 1.13-1.13Z"/></svg>
+                <span class="sr-only">Instagram</span>
+              </a>
+              <a href="https://x.com/myselfmahin" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3h3.2l-7 8 8.2 10h-6.4l-5-6.1L6.6 21H3.4l7.5-8.7L3 3h6.6l4.5 5.5L18.9 3Zm-1.1 16h1.8L8.6 4.9H6.7L17.8 19Z"/></svg>
+                <span class="sr-only">Twitter</span>
+              </a>
+              <a href="https://www.snapchat.com/add/being_lame" target="_blank" rel="noopener noreferrer" aria-label="Snapchat" title="Snapchat">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.36 0 5.87 2.37 5.87 5.78v2.2c0 .26.08.47.26.65.36.35.95.52 1.53.7.3.09.58.18.82.28.35.14.46.58.2.86-.54.6-1.4 1-2.39 1.14-.1.85-.37 1.5-.84 1.99-.58.6-1.4.94-2.42 1.02-.26.56-.88 1.06-1.98 1.06-1.1 0-1.72-.5-1.98-1.06-1.02-.08-1.84-.42-2.42-1.02-.47-.49-.74-1.14-.84-1.99-.99-.14-1.85-.54-2.39-1.14-.26-.28-.15-.72.2-.86.24-.1.52-.19.82-.28.58-.18 1.17-.35 1.53-.7.18-.18.26-.39.26-.65V7.98C6.13 4.57 8.64 2.2 12 2.2Z"/></svg>
+                <span class="sr-only">Snapchat</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 | Mohammodullah Al Mahin</p>
+  </footer>
+
+  <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
