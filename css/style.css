@@ -931,6 +931,26 @@ main {
   transform: translateY(-2px);
 }
 
+.site-stats {
+  width: min(var(--max-width), 94vw);
+  margin: 0 auto 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.26rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.site-stats p {
+  margin: 0;
+}
+
+.site-stats span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .site-footer {
   width: min(var(--max-width), 94vw);
   margin: 0 auto 2.2rem;
@@ -1189,6 +1209,11 @@ main {
   .site-footer {
     margin-bottom: 1.5rem;
     font-size: 0.78rem;
+  }
+
+  .site-stats {
+    font-size: 0.76rem;
+    margin-bottom: 0.6rem;
   }
 }
 

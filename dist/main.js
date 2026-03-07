@@ -7,14 +7,93 @@ const roles = [
 const contactText = "Open to cybersecurity and student tech initiatives. I am open to discussing ideas.";
 const typingTarget = document.getElementById("typed-role");
 const contactTypingTarget = document.getElementById("contact-typed");
+const totalViewsTarget = document.getElementById("total-views");
+const liveViewsTarget = document.getElementById("live-views");
 const menuToggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("main-nav");
 const navLinks = Array.from(document.querySelectorAll(".main-nav a"));
 const revealElements = Array.from(document.querySelectorAll(".reveal"));
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const counterApiBase = "https://api.countapi.xyz";
+const counterNamespace = "mahinexe-portfolio";
+const totalViewsKey = "total-views";
+const liveUsersKey = "live-users";
+let hasRegisteredLiveUser = false;
+let hasReleasedLiveUser = false;
 const sleep = (ms) => new Promise((resolve) => {
     window.setTimeout(resolve, ms);
 });
+const setCounterText = (target, value) => {
+    if (!target) {
+        return;
+    }
+    target.textContent = value === null ? "--" : String(Math.max(0, Math.round(value)));
+};
+const readCounterValue = async (path) => {
+    try {
+        const response = await fetch(`${counterApiBase}${path}`, { cache: "no-store" });
+        if (!response.ok) {
+            return null;
+        }
+        const data = await response.json();
+        if (typeof data.value !== "number") {
+            return null;
+        }
+        return data.value;
+    }
+    catch {
+        return null;
+    }
+};
+const updateTotalViews = async () => {
+    if (!totalViewsTarget) {
+        return;
+    }
+    const value = await readCounterValue(`/hit/${counterNamespace}/${totalViewsKey}`);
+    setCounterText(totalViewsTarget, value);
+};
+const refreshLiveUsers = async () => {
+    if (!liveViewsTarget) {
+        return;
+    }
+    const value = await readCounterValue(`/get/${counterNamespace}/${liveUsersKey}`);
+    setCounterText(liveViewsTarget, value);
+};
+const registerLiveUser = async () => {
+    if (!liveViewsTarget || hasRegisteredLiveUser) {
+        return;
+    }
+    const value = await readCounterValue(`/update/${counterNamespace}/${liveUsersKey}?amount=1`);
+    if (value !== null) {
+        hasRegisteredLiveUser = true;
+    }
+    setCounterText(liveViewsTarget, value);
+};
+const releaseLiveUser = () => {
+    if (!hasRegisteredLiveUser || hasReleasedLiveUser) {
+        return;
+    }
+    hasReleasedLiveUser = true;
+    void fetch(`${counterApiBase}/update/${counterNamespace}/${liveUsersKey}?amount=-1`, {
+        method: "GET",
+        cache: "no-store",
+        keepalive: true
+    });
+};
+const setupVisitorStats = () => {
+    if (!totalViewsTarget && !liveViewsTarget) {
+        return;
+    }
+    void updateTotalViews();
+    void registerLiveUser();
+    if (liveViewsTarget) {
+        window.setInterval(() => {
+            void refreshLiveUsers();
+        }, 15000);
+    }
+    window.addEventListener("pagehide", releaseLiveUser);
+    window.addEventListener("beforeunload", releaseLiveUser);
+};
 const setupMenu = () => {
     if (!menuToggle || !nav) {
         return;
@@ -101,6 +180,7 @@ const startContactTyping = async () => {
 const initialize = () => {
     setupMenu();
     setupReveal();
+    setupVisitorStats();
     void startRoleTyping();
 };
 initialize();
