@@ -65,12 +65,10 @@ body {
 
 .floating-code span {
   position: absolute;
-  color: rgba(214, 232, 247, 0.22);
-  border: 1px solid rgba(214, 232, 247, 0.18);
   border-radius: 999px;
   padding: 0.4rem 0.8rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.06em;
   backdrop-filter: blur(1px);
   animation: floatTag linear infinite;
@@ -79,36 +77,48 @@ body {
 .floating-code span:nth-child(1) {
   top: 18%;
   left: 8%;
+  color: rgba(127, 212, 255, 0.35);
+  border: 1px solid rgba(127, 212, 255, 0.22);
   animation-duration: 17s;
 }
 
 .floating-code span:nth-child(2) {
   top: 70%;
   left: 14%;
+  color: rgba(255, 159, 95, 0.35);
+  border: 1px solid rgba(255, 159, 95, 0.22);
   animation-duration: 21s;
 }
 
 .floating-code span:nth-child(3) {
   top: 24%;
   right: 11%;
+  color: rgba(142, 160, 255, 0.35);
+  border: 1px solid rgba(142, 160, 255, 0.22);
   animation-duration: 19s;
 }
 
 .floating-code span:nth-child(4) {
   top: 80%;
   right: 18%;
+  color: rgba(24, 212, 191, 0.35);
+  border: 1px solid rgba(24, 212, 191, 0.22);
   animation-duration: 23s;
 }
 
 .floating-code span:nth-child(5) {
   top: 44%;
   right: 4%;
+  color: rgba(154, 249, 184, 0.35);
+  border: 1px solid rgba(154, 249, 184, 0.22);
   animation-duration: 25s;
 }
 
 .floating-code span:nth-child(6) {
   top: 52%;
   left: 46%;
+  color: rgba(255, 199, 136, 0.35);
+  border: 1px solid rgba(255, 199, 136, 0.22);
   animation-duration: 20s;
 }
 
@@ -1210,6 +1220,15 @@ main {
 }
 
 @media (max-width: 540px) {
+  .floating-code span:nth-child(1) {
+    top: 42%;
+    left: 3%;
+  }
+
+  .floating-code span:nth-child(3) {
+    top: 40%;
+  }
+
   .hero {
     padding-top: 2.4rem;
   }
