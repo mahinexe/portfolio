@@ -361,6 +361,13 @@ main {
   background: linear-gradient(180deg, rgba(16, 27, 39, 0.92), rgba(9, 17, 25, 0.95));
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
   overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-code .terminal-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(24, 212, 191, 0.55);
+  box-shadow: 0 22px 44px rgba(24, 212, 191, 0.12);
 }
 
 .hero-code .terminal-topbar {
@@ -631,6 +638,13 @@ main {
   overflow: hidden;
   background: linear-gradient(180deg, rgba(16, 27, 39, 0.92), rgba(9, 17, 25, 0.95));
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.code-card .terminal-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(24, 212, 191, 0.55);
+  box-shadow: 0 22px 44px rgba(24, 212, 191, 0.12);
 }
 
 .code-card .terminal-topbar {
@@ -732,12 +746,15 @@ main {
   color: #cde0ef;
   padding: 0.5rem 0.86rem;
   font-size: 0.88rem;
-  transition: border-color 0.22s ease, color 0.22s ease;
+  transition: border-color 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  cursor: default;
 }
 
 .chip-grid span:hover {
   border-color: var(--accent);
   color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(24, 212, 191, 0.15);
 }
 
 .projects-grid {
@@ -761,6 +778,11 @@ main {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project:hover img {
+  transform: scale(1.05);
 }
 
 .project-content {
@@ -920,6 +942,13 @@ main {
   padding: 1rem;
   background: linear-gradient(160deg, rgba(18, 30, 44, 0.9), rgba(13, 22, 32, 0.94));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(24, 212, 191, 0.55);
+  box-shadow: 0 12px 30px rgba(24, 212, 191, 0.12);
 }
 
 .edu-top {
@@ -959,6 +988,18 @@ main {
 .edu-school {
   margin: 0.4rem 0 0;
   color: var(--muted);
+}
+
+.edu-school a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.22s ease, transform 0.22s ease;
+  display: inline-block;
+}
+
+.edu-school a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .edu-card ul {

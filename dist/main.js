@@ -165,7 +165,7 @@ const setupReveal = () => {
             }
             observer.unobserve(target);
         });
-    }, { threshold: 0.22, rootMargin: "0px 0px -20px 0px" });
+    }, { threshold: 0.08, rootMargin: "0px 0px 60px 0px" });
     revealElements.forEach((element) => observer.observe(element));
 };
 const startRoleTyping = async () => {
