@@ -70,8 +70,27 @@ const sleep = (ms: number): Promise<void> => new Promise((resolve) => {
 
 const isFacebookLink = (url: string): boolean => /facebook\.com/i.test(url);
 
-const facebookSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.2c0-.87.24-1.46 1.5-1.46h1.6V5.1c-.28-.04-1.23-.1-2.33-.1-2.31 0-3.89 1.41-3.89 4v2H8v3h2.38v8h3.12Z"/></svg>';
-const linkSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.06 8.11l1.415 1.415a7 7 0 0 1 0 9.9l-.354.353a7 7 0 1 1-9.9-9.9l1.415 1.415a5 5 0 1 0 7.07 7.07l.354-.353a5 5 0 0 0 0-7.07l-1.414-1.415 1.415-1.414zm6.718-6.719a7 7 0 0 1 0 9.9l-1.414-1.414a5 5 0 0 0-7.071-7.071l-.354.353a5 5 0 0 0 0 7.071l1.414 1.415-1.414 1.414-1.415-1.414a7 7 0 0 1 0-9.9l.354-.354a7 7 0 0 1 9.9 0z"/></svg>';
+const isAllowedUrl = (url: string): boolean => {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" || parsed.protocol === "http:";
+  } catch {
+    return false;
+  }
+};
+
+const createSvgIcon = (pathD: string): SVGSVGElement => {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("aria-hidden", "true");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", pathD);
+  svg.appendChild(path);
+  return svg;
+};
+
+const facebookIconPath = "M13.5 22v-8h2.7l.4-3h-3.1V9.2c0-.87.24-1.46 1.5-1.46h1.6V5.1c-.28-.04-1.23-.1-2.33-.1-2.31 0-3.89 1.41-3.89 4v2H8v3h2.38v8h3.12Z";
+const linkIconPath = "M13.06 8.11l1.415 1.415a7 7 0 0 1 0 9.9l-.354.353a7 7 0 1 1-9.9-9.9l1.415 1.415a5 5 0 1 0 7.07 7.07l.354-.353a5 5 0 0 0 0-7.07l-1.414-1.415 1.415-1.414zm6.718-6.719a7 7 0 0 1 0 9.9l-1.414-1.414a5 5 0 0 0-7.071-7.071l-.354.353a5 5 0 0 0 0 7.071l1.414 1.415-1.414 1.414-1.415-1.414a7 7 0 0 1 0-9.9l.354-.354a7 7 0 0 1 9.9 0z";
 
 const renderGallery = (): void => {
   if (!galleryGrid) {
@@ -89,12 +108,12 @@ const renderGallery = (): void => {
     const preview = document.createElement("div");
     preview.className = "gallery-preview";
 
-    if (item.image) {
+    if (item.image && isAllowedUrl(item.image)) {
       const img = document.createElement("img");
       img.src = item.image;
       img.alt = item.description;
       img.loading = "lazy";
-      if (hasLink && item.link) {
+      if (hasLink && item.link && isAllowedUrl(item.link)) {
         const imgLink = document.createElement("a");
         imgLink.href = item.link;
         imgLink.target = "_blank";
@@ -105,13 +124,13 @@ const renderGallery = (): void => {
       } else {
         preview.appendChild(img);
       }
-    } else if (hasLink && item.link) {
+    } else if (hasLink && item.link && isAllowedUrl(item.link)) {
       const anchor = document.createElement("a");
       anchor.href = item.link;
       anchor.target = "_blank";
       anchor.rel = "noopener noreferrer";
       anchor.className = "gallery-preview-link";
-      anchor.innerHTML = isFacebookLink(item.link) ? facebookSvg : linkSvg;
+      anchor.appendChild(createSvgIcon(isFacebookLink(item.link) ? facebookIconPath : linkIconPath));
       const label = document.createElement("span");
       label.textContent = isFacebookLink(item.link) ? "View on Facebook" : "Open Link";
       anchor.appendChild(label);
