@@ -1,5 +1,7 @@
 # Portfolio Website
 
+![Portfolio Preview](./img/thumbnail.png)
+
 A modern, coder-themed portfolio website featuring TypeScript-driven animations and terminal aesthetics.
 
 ## 🚀 Features
