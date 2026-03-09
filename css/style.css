@@ -774,6 +774,117 @@ main {
   text-decoration: underline;
 }
 
+.gallery-grid {
+  margin-top: 1.35rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gallery-card {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(18, 30, 44, 0.9), rgba(13, 22, 32, 0.94));
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(24, 212, 191, 0.55);
+}
+
+.gallery-preview {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, rgba(7, 14, 21, 0.98), rgba(14, 24, 36, 0.95));
+  border-bottom: 1px solid rgba(173, 204, 235, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.gallery-preview img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-preview-imglink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-preview-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.25s ease, transform 0.25s ease;
+  padding: 1.5rem;
+}
+
+.gallery-preview-link:hover {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.gallery-preview-link svg {
+  width: 3rem;
+  height: 3rem;
+  fill: currentColor;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+
+.gallery-preview-link:hover svg {
+  opacity: 1;
+}
+
+.gallery-preview-link span {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gallery-preview-empty {
+  color: #5a7a94;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gallery-content {
+  padding: 0.85rem 1rem;
+  background: rgba(7, 14, 21, 0.6);
+  border-top: 1px solid rgba(109, 146, 175, 0.15);
+}
+
+.gallery-content p {
+  margin: 0;
+  line-height: 1.55;
+  font-size: 0.84rem;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.gc-prompt {
+  color: #62f7e6;
+}
+
+.gc-string {
+  color: #f7a8ff;
+}
+
 .education-grid {
   margin-top: 1.35rem;
   display: grid;
@@ -966,6 +1077,10 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
   .education-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1021,6 +1136,10 @@ main {
   }
 
   .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
