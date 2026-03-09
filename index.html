@@ -67,10 +67,11 @@
             <p>intro.ts</p>
           </div>
           <div class="terminal-body">
-            <pre><code><span class="ts-keyword">const</span> <span class="ts-variable">developer</span> <span class="ts-operator">=</span> <span class="ts-punc">{</span>
-  <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Developer"</span><span class="ts-punc">,</span>
-  <span class="ts-prop">focus</span><span class="ts-punc">:</span> <span class="ts-string">"Machine Learning"</span><span class="ts-punc">,</span>
-  <span class="ts-prop">passion</span><span class="ts-punc">:</span> <span class="ts-string">"Cybersecurity &amp; Ethical Hacking"</span>
+            <pre><code><span class="ts-keyword">const</span> <span class="ts-variable">intro</span> <span class="ts-operator">=</span> <span class="ts-punc">{</span>
+  <span class="ts-prop">name</span><span class="ts-punc">:</span> <span class="ts-string">"Mohammodullah Al Mahin"</span><span class="ts-punc">,</span>
+  <span class="ts-prop">university</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast University"</span><span class="ts-punc">,</span>
+  <span class="ts-prop">interests</span><span class="ts-punc">:</span> <span class="ts-punc">[</span><span class="ts-string">"Cybersecurity"</span><span class="ts-punc">,</span> <span class="ts-string">"Automation"</span><span class="ts-punc">,</span> <span class="ts-string">"System Design"</span><span class="ts-punc">]</span><span class="ts-punc">,</span>
+  <span class="ts-prop">mindset</span><span class="ts-punc">:</span> <span class="ts-string">"Learn fast. Build deeply. Ship reliably."</span>
 <span class="ts-punc">}</span><span class="ts-punc">;</span></code></pre>
           </div>
         </div>
@@ -95,13 +96,53 @@
             <p>about.ts</p>
           </div>
           <div class="terminal-body">
-            <pre><code><span class="ts-keyword">const</span> <span class="ts-variable">developer</span> <span class="ts-operator">=</span> <span class="ts-punc">{</span>
-  <span class="ts-prop">name</span><span class="ts-punc">:</span> <span class="ts-string">"Mohammodullah Al Mahin"</span><span class="ts-punc">,</span>
-  <span class="ts-prop">university</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast University"</span><span class="ts-punc">,</span>
-  <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Team Lead, IT &amp; Infrastructure; Campaign Visual Specialist"</span><span class="ts-punc">,</span>
-  <span class="ts-prop">interests</span><span class="ts-punc">:</span> <span class="ts-punc">[</span><span class="ts-string">"Cybersecurity"</span><span class="ts-punc">,</span> <span class="ts-string">"Automation"</span><span class="ts-punc">,</span> <span class="ts-string">"System Design"</span><span class="ts-punc">]</span><span class="ts-punc">,</span>
-  <span class="ts-prop">mindset</span><span class="ts-punc">:</span> <span class="ts-string">"Learn fast. Build deeply. Ship reliably."</span>
-<span class="ts-punc">}</span><span class="ts-punc">;</span></code></pre>
+            <pre><code><span class="ts-keyword">const</span> <span class="ts-variable">experience</span> <span class="ts-operator">=</span> <span class="ts-punc">[</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Sub Executive - Campaign Visual Specialist"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast University Photography &amp; Visual Art's Forum"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Mar 2026 - Present"</span>
+  <span class="ts-punc">}</span><span class="ts-punc">,</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"General Member"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"IEEE Computer Society SEU Student Branch Chapter"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Nov 2025 - Present"</span>
+  <span class="ts-punc">}</span><span class="ts-punc">,</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Award Nominator - SEU Ambassador Award Program"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast University"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Jul 2025 - Jan 2026"</span>
+  <span class="ts-punc">}</span><span class="ts-punc">,</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Team Lead at IT &amp; Infrastructure"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast Computer Club"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Apr 2025 - Jan 2026"</span>
+  <span class="ts-punc">}</span><span class="ts-punc">,</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Sub Executive"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast Computer Club"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Apr 2025 - Jan 2026"</span>
+  <span class="ts-punc">}</span><span class="ts-punc">,</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Assistant Head of IT"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast Computer Club"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Jan 2024 - Apr 2025"</span>
+  <span class="ts-punc">}</span><span class="ts-punc">,</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"General Member"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"Southeast Computer Club"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Mar 2023 - Nov 2024"</span>
+  <span class="ts-punc">}</span><span class="ts-punc">,</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"Cadet Corporal"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"Bangladesh National Cadet Corps | BNCC"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Mar 2020 - Jun 2022"</span>
+  <span class="ts-punc">}</span><span class="ts-punc">,</span>
+  <span class="ts-punc">{</span>
+    <span class="ts-prop">role</span><span class="ts-punc">:</span> <span class="ts-string">"General Member"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">org</span><span class="ts-punc">:</span> <span class="ts-string">"MUBC Film &amp; Photography Club"</span><span class="ts-punc">,</span>
+    <span class="ts-prop">period</span><span class="ts-punc">:</span> <span class="ts-string">"Apr 2018 - Mar 2020"</span>
+  <span class="ts-punc">}</span>
+<span class="ts-punc">]</span><span class="ts-punc">;</span></code></pre>
           </div>
         </div>
       </div>
