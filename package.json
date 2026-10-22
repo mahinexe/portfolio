@@ -1,7 +1,11 @@
 {
+  "name": "mahinexe-portfolio",
+  "private": true,
   "scripts": {
     "build": "tsc",
-    "build:watch": "tsc --watch"
+    "build:watch": "tsc --watch",
+    "dev": "node server.js",
+    "start": "node server.js"
   },
   "devDependencies": {
     "typescript": "^5.8.2"

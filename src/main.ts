@@ -61,8 +61,11 @@ const galleryGrid = document.getElementById("gallery-grid");
 const menuToggle = document.getElementById("menu-toggle") as HTMLButtonElement | null;
 const nav = document.getElementById("main-nav");
 const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>(".main-nav a"));
+const smoothScrollLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>("a[href^='#']"));
+const typingCodeElements = Array.from(document.querySelectorAll<HTMLElement>("[data-typing-code]"));
 const revealElements = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const typedCodeElements = new Set<HTMLElement>();
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => {
   window.setTimeout(resolve, ms);
@@ -181,6 +184,84 @@ const setupMenu = (): void => {
   });
 };
 
+const setupSmoothScrolling = (): void => {
+  smoothScrollLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (prefersReducedMotion) {
+        return;
+      }
+
+      const targetId = link.getAttribute("href");
+      if (!targetId || targetId === "#") {
+        return;
+      }
+
+      const target = document.querySelector(targetId);
+      if (!target) {
+        return;
+      }
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", targetId);
+    });
+  });
+};
+
+const startCodeTyping = async (codeElement: HTMLElement): Promise<void> => {
+  if (typedCodeElements.has(codeElement)) {
+    return;
+  }
+
+  typedCodeElements.add(codeElement);
+  const walker = document.createTreeWalker(codeElement, NodeFilter.SHOW_TEXT);
+  const textNodes: Text[] = [];
+  let currentNode = walker.nextNode();
+
+  while (currentNode) {
+    textNodes.push(currentNode as Text);
+    currentNode = walker.nextNode();
+  }
+
+  if (prefersReducedMotion) {
+    return;
+  }
+
+  const originalText = textNodes.map((node) => node.textContent ?? "");
+  textNodes.forEach((node) => {
+    node.textContent = "";
+  });
+
+  for (let nodeIndex = 0; nodeIndex < textNodes.length; nodeIndex += 1) {
+    const text = originalText[nodeIndex];
+    for (let characterIndex = 1; characterIndex <= text.length; characterIndex += 1) {
+      textNodes[nodeIndex].textContent = text.slice(0, characterIndex);
+      await sleep(8);
+    }
+  }
+};
+
+const setupCodeTyping = (): void => {
+  if (typingCodeElements.length === 0) {
+    return;
+  }
+
+  if (prefersReducedMotion) {
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        void startCodeTyping(entry.target as HTMLElement);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  typingCodeElements.forEach((element) => observer.observe(element));
+};
+
 const setupReveal = (): void => {
   if (revealElements.length === 0) {
     return;
@@ -271,6 +352,8 @@ const startContactTyping = async (): Promise<void> => {
 const initialize = (): void => {
   renderGallery();
   setupMenu();
+  setupSmoothScrolling();
+  setupCodeTyping();
   setupReveal();
   void startRoleTyping();
 };

@@ -11,6 +11,12 @@
   --max-width: 1120px;
 }
 
+/* Pikachu - https://www.cursors-4u.com/cursor/pikachu-15 */
+* {
+  cursor: url('../img/pikachu-21a6e5cf-32.png') 32 32, url('../img/pikachu-21a6e5cf-32.webp') 32 32, url('https://cdn.cursors-4u.net/previews/pikachu-21a6e5cf-32.webp') 32 32, auto !important;
+}
+/* End www.Cursors-4U.com Code */
+
 * {
   box-sizing: border-box;
 }
@@ -20,6 +26,11 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
+}
+
+section[id],
+main[id] {
+  scroll-margin-top: 6.5rem;
 }
 
 body {

@@ -53,8 +53,11 @@ const galleryGrid = document.getElementById("gallery-grid");
 const menuToggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("main-nav");
 const navLinks = Array.from(document.querySelectorAll(".main-nav a"));
+const smoothScrollLinks = Array.from(document.querySelectorAll("a[href^='#']"));
+const typingCodeElements = Array.from(document.querySelectorAll("[data-typing-code]"));
 const revealElements = Array.from(document.querySelectorAll(".reveal"));
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const typedCodeElements = new Set();
 const sleep = (ms) => new Promise((resolve) => {
     window.setTimeout(resolve, ms);
 });
@@ -158,6 +161,70 @@ const setupMenu = () => {
         });
     });
 };
+const setupSmoothScrolling = () => {
+    smoothScrollLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            if (prefersReducedMotion) {
+                return;
+            }
+            const targetId = link.getAttribute("href");
+            if (!targetId || targetId === "#") {
+                return;
+            }
+            const target = document.querySelector(targetId);
+            if (!target) {
+                return;
+            }
+            event.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            window.history.replaceState(null, "", targetId);
+        });
+    });
+};
+const startCodeTyping = async (codeElement) => {
+    if (typedCodeElements.has(codeElement)) {
+        return;
+    }
+    typedCodeElements.add(codeElement);
+    const walker = document.createTreeWalker(codeElement, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    let currentNode = walker.nextNode();
+    while (currentNode) {
+        textNodes.push(currentNode);
+        currentNode = walker.nextNode();
+    }
+    if (prefersReducedMotion) {
+        return;
+    }
+    const originalText = textNodes.map((node) => node.textContent ?? "");
+    textNodes.forEach((node) => {
+        node.textContent = "";
+    });
+    for (let nodeIndex = 0; nodeIndex < textNodes.length; nodeIndex += 1) {
+        const text = originalText[nodeIndex];
+        for (let characterIndex = 1; characterIndex <= text.length; characterIndex += 1) {
+            textNodes[nodeIndex].textContent = text.slice(0, characterIndex);
+            await sleep(8);
+        }
+    }
+};
+const setupCodeTyping = () => {
+    if (typingCodeElements.length === 0) {
+        return;
+    }
+    if (prefersReducedMotion) {
+        return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                void startCodeTyping(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    typingCodeElements.forEach((element) => observer.observe(element));
+};
 const setupReveal = () => {
     if (revealElements.length === 0) {
         return;
@@ -228,6 +295,8 @@ const startContactTyping = async () => {
 const initialize = () => {
     renderGallery();
     setupMenu();
+    setupSmoothScrolling();
+    setupCodeTyping();
     setupReveal();
     void startRoleTyping();
 };
